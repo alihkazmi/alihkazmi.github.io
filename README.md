@@ -1,59 +1,56 @@
-<!-- The (first) h1 will be used as the <title> of the HTML page -->
-# Syed Ali Hassan Kazmi
+# resume.md
 
-<!-- The unordered list immediately after the h1 will be formatted on a single
-line. It is intended to be used for contact details -->
-- <sahkazmi100@gmail.com>
-- +92 311 469 2564
-- Lahore, Punjab
+![Resume](resume.png)
 
-<!-- The paragraph after the h1 and ul and before the first h2 is optional. It
-is intended to be used for a short summary. -->
-CEO and Software Engineer with knowledge of applied information theory,
-including optimizing lossless compression schema of both the length-limited and
-adaptive variants.
+Write your resume in
+[Markdown](https://raw.githubusercontent.com/mikepqr/resume.md/main/resume.md),
+style it with [CSS](resume.css), output to [HTML](resume.html) and
+[PDF](resume.pdf).
 
-## Experience
+## Prerequisites
 
-<!-- You have to wrap the "left" and "right" half of these headings in spans by
-hand -->
-### <span>CEO/President, Pied Piper</span> <span>Dec 2013 -- Dec 2014</span>
+ - Python ≥ 3.6
+ - [python-markdown](https://python-markdown.github.io/) (`pip install
+   markdown`)
+ - Optional, required for PDF output: Google Chrome or Chromium
 
-Pied Piper is a multi-platform technology based on a proprietary universal
-compression algorithm that has consistently fielded high Weisman Scores™ that
-are not merely competitive, but approach the theoretical limit of lossless
-compression.
+## Usage
 
- - Build an algorithm for artist to detect if their music was violating
-   copyright infringement laws
- - Successfully won Techcrunch Disrupt
- - Optimized an algorithm that holds the current world record for Weisman Scores
+ 1. Download [resume.py](resume.py), [resume.md](resume.md) and
+    [resume.css](resume.css) (or make a copy of this repository by [using the
+    template](https://github.com/mikepqr/resume.md/generate), forking, or
+    cloning).
 
-### <span>Teacher, CoderDojo</span> <span>July 2013 -- Dec 2013</span>
+ 2. Edit [resume.md](resume.md) (the placeholder text is taken with thanks from
+    the [JSON Resume Project](https://jsonresume.org/themes/))
 
-Global movement of free coding clubs for young people.
+ 3. Run `python3 resume.py` to build resume.html and resume.pdf.
 
- - Awarded 'Teacher of the Month'
+     - Use `--no-html` or `--no-pdf` to disable HTML or PDF output.
 
-## Projects
+     - Use `--chrome-path=/path/to/chrome` if resume.py cannot find your Chrome
+       or Chromium executable.
 
-### <span>Miss Direction</span> <span>Aug 2016</span>
+## Customization
 
-A mapping engine that misguides you:
+Edit [resume.css](resume.css) to change the appearance of your resume. The
+default style is extremely generic, which is perhaps what you want in a resume,
+but CSS gives you a lot of flexibility. See, e.g. [The Tech Resume
+Inside-Out](https://www.thetechinterview.com/) for good advice about what a
+resume should look like (and what it should say).
 
-   - Won award at AIHacks 2016
-   - Built by all women team of newbie programmers
-   - Using modern technologies such as GoogleMaps, Chrome Extension and Javascript
+Change the appearance of the PDF version (without affecting the HTML version) by
+adding rules under the `@media print` CSS selector.
 
-## Education
+Change the margins and paper size of the PDF version by editing the [`@page` CSS
+rule](https://developer.mozilla.org/en-US/docs/Web/CSS/%40page/size).
 
-### <span>University of Oklahoma, BA Information Technology</span> <span>2011 -- 2014</span>
-
-  - GPA 4.0
-  - DB1101 - Basic SQL
-  - CS2011 - Java Introduction
-
-## Skills
-
- - Web development: HTML, CSS, JavaScript
- - Compression: Mpeg, MP4, GIF
+[python-markdown](https://python-markdown.github.io/) is by default a very basic
+markdown compiler, but it has a number of optional extensions that you may want
+to enable (by adding to [the list of extensions
+here](https://github.com/mikepqr/resume.md/blob/f1b0699a9b66833cb67bb59111f45a09ed3c0f7e/resume.py#L112)).
+<code><a
+href="https://python-markdown.github.io/extensions/attr_list/">attr_list</a></code>
+in particular may by useful if you are editing the CSS.
+[abbreviations](https://python-markdown.github.io/extensions/abbreviations/)
+extension is already enabled.
